@@ -2,29 +2,29 @@
   {
     "id": 1,
     "merk": "Beauty Of Joseon",
-    "soort": "Revitalize Sleeping Mask",
-    "description": "Een herstellend slaapmasker dat de huid revitaliseert en voedt tijdens de nacht.",
-    "image_path": "/images/beauty-of-joseon-revitalize-sleeping-mask.jpg",
+    "soort": "Dynasty Cream",
+    "description": "De Beauty Of Joseon Dynasty Cream is een verhelderende en anti-verouderingscrème gemaakt van traditionele Koreaanse kruiden met o.a. orchidee-extract om de huid te hydrateren, strakker en gladder te maken.",
+    "image_path": ["/src/assets/DynastyCreamBOJ.jpg", "/src/assets/DynastyCreamBOJ.jpg"],
     "price": 25.99,
     "vat_rate": 21,
-    "stock_quantity": 50
+    "stock_quantity": 90
   },
   {
     "id": 2,
     "merk": "COSRX",
     "soort": "Advanced Snail 96 Mucin Power Essence",
     "description": "Een essence verrijkt met slakkenmucine om de huid te kalmeren en te hydrateren.",
-    "image_path": "/images/cosrx-advanced-snail-96-mucin-power-essence.jpg",
+    "image_path": ["/src/assets/AdvancedsnailCOSRX.jpg", "/src/assets/advancedsnailcosrc2.jpg"],
     "price": 18.50,
     "vat_rate": 21,
-    "stock_quantity": 70
+    "stock_quantity": 99
   },
   {
     "id": 3,
     "merk": "Missha",
-    "soort": "Time Revolution The First Treatment Essence",
+    "soort": "Time Revolution The First Treatment Essence RX",
     "description": "Een essentie die helpt bij het verbeteren van de huidtextuur en het verhelderen van de teint.",
-    "image_path": "/images/missha-time-revolution-the-first-treatment-essence.jpg",
+    "image_path": ["/src/assets/misshathefirst.jpg", "/src/assets/misshathefirst2.jpg"],
     "price": 38.75,
     "vat_rate": 21,
     "stock_quantity": 35
@@ -34,7 +34,7 @@
     "merk": "IUNIK",
     "soort": "Centella Calming Gel Cream",
     "description": "Een kalmerende gelcrème verrijkt met centella-extracten voor gevoelige huidtypes.",
-    "image_path": "/images/iunik-centella-calming-gel-cream.jpg",
+    "image_path": ["/src/assets/iunikcetnella.jpg", "/src/assets/iunikcentella2.jpg"],
     "price": 21.00,
     "vat_rate": 21,
     "stock_quantity": 60
@@ -44,7 +44,7 @@
     "merk": "Anua",
     "soort": "Heartleaf 77% Soothing Toner",
     "description": "Een verzachtende toner met 77% hartbladextract om de huid te kalmeren en te hydrateren.",
-    "image_path": "/images/anua-heartleaf-77-soothing-toner.jpg",
+    "image_path": ["/src/assets/anuaheartleaf.jpg", "/src/assets/anuaheartleaf2.jpg"],
     "price": 14.99,
     "vat_rate": 21,
     "stock_quantity": 80
@@ -54,7 +54,7 @@
     "merk": "Axis-y",
     "soort": "Mugwort Pore Clarifying Wash Off Pack",
     "description": "Een gezichtsmasker op basis van bijvoet om de poriën te reinigen en te verfijnen.",
-    "image_path": "/images/axis-y-mugwort-pore-clarifying-wash-off-pack.jpg",
+    "image_path": ["/src/assets/axisymugwort.jpg", "/src/assets/axisymugwort2.jpg"],
     "price": 28.00,
     "vat_rate": 21,
     "stock_quantity": 45
@@ -64,7 +64,7 @@
     "merk": "Beauty Of Joseon",
     "soort": "Radiance Cleansing Balm",
     "description": "Een reinigingsbalsem die helpt bij het verwijderen van make-up en onzuiverheden.",
-    "image_path": "/images/beauty-of-joseon-radiance-cleansing-balm.jpg",
+    "image_path": ["/src/assets/beautyjosradiance.jpg", "/src/assets/beautyjosradiance2.jpg"],
     "price": 21.50,
     "vat_rate": 21,
     "stock_quantity": 55
@@ -74,17 +74,17 @@
     "merk": "COSRX",
     "soort": "Acne Pimple Master Patch",
     "description": "Transparante pleisters die acne en puistjes behandelen en beschermen tegen infecties.",
-    "image_path": "/images/cosrx-acne-pimple-master-patch.jpg",
+    "image_path": ["/src/assets/AcnePimpleCOSRX.jpg", "/src/assets/AcnePimpleCOSRX2.jpg"],
     "price": 5.99,
     "vat_rate": 21,
-    "stock_quantity": 90
+    "stock_quantity": 85
   },
   {
     "id": 9,
     "merk": "Missha",
     "soort": "Time Revolution Night Repair Probio Ampoule",
     "description": "Een nachtampul die helpt bij het verbeteren van de huidtextuur en de elasticiteit.",
-    "image_path": "/images/missha-time-revolution-night-repair-probio-ampoule.jpg",
+    "image_path": ["/src/assets/misshatimerev.jpg", "/src/assets/misshatimerev2.jpg"],
     "price": 42.00,
     "vat_rate": 21,
     "stock_quantity": 40
@@ -94,7 +94,7 @@
     "merk": "IUNIK",
     "soort": "Rose Galactomyces Essential Toner",
     "description": "Een toner verrijkt met rozenextracten om de huid te hydrateren en te revitaliseren.",
-    "image_path": "/images/iunik-rose-galactomyces-essential-toner.jpg",
+    "image_path": ["/src/assets/rose.jpg", "/src/assets/rose2.jpg"],
     "price": 17.75,
     "vat_rate": 21,
     "stock_quantity": 75
@@ -102,9 +102,9 @@
   {
     "id": 11,
     "merk": "Anua",
-    "soort": "AHA BHA PHA 30 Days Miracle Cleansing Bar",
-    "description": "Een reinigingsstaafje dat exfolieert en onzuiverheden vermindert voor een heldere huid.",
-    "image_path": "/images/anua-aha-bha-pha-30-days-miracle-cleansing-bar.jpg",
+    "soort": "Heartleaf 77% Clear Pad",
+    "description": "De Anua Heartleaf 77% Clear Pad is een tonerpad die de kracht van veganistische en wreedheidvrije ingrediënten combineert met de kalmerende voordelen van Anua's Heartleaf 77% Soothing Toner.",
+    "image_path": ["/src/assets/anuaheartleafpad.jpg", "/src/assets/anuaheartleafpad2.jpg"],
     "price": 9.50,
     "vat_rate": 21,
     "stock_quantity": 65
@@ -114,7 +114,7 @@
     "merk": "Axis-y",
     "soort": "Dark Spot Correcting Glow Serum",
     "description": "Een serum dat helpt bij het verminderen van donkere vlekken en het herstellen van de huid.",
-    "image_path": "/images/axis-y-dark-spot-correcting-glow-serum.jpg",
+    "image_path": ["/src/assets/axisydarkspot.jpg", "/src/assets/axisydarkspot2.jpg"],
     "price": 31.99,
     "vat_rate": 21,
     "stock_quantity": 30
@@ -122,19 +122,19 @@
   {
     "id": 13,
     "merk": "Beauty Of Joseon",
-    "soort": "Repair Serum",
-    "description": "Een herstellend serum dat de huid hydrateert en de elasticiteit verbetert.",
-    "image_path": "/images/beauty-of-joseon-repair-serum.jpg",
+    "soort": "Repair Serum: Ginseng+Snail Mucin",
+    "description": "Een herstellend serum om veroudering en pigmentvlekken tegen te gaan.",
+    "image_path": ["/src/assets/beautyjosrepairserum.jpg", "/src/assets/beautyjosrepairserum2.jpg"],
     "price": 29.00,
     "vat_rate": 21,
-    "stock_quantity": 50
+    "stock_quantity": 95
   },
   {
     "id": 14,
     "merk": "COSRX",
     "soort": "Low pH Good Morning Gel Cleanser",
     "description": "Een zachte reinigingsgel met een lage pH-waarde om de huid te reinigen zonder uit te drogen.",
-    "image_path": "/images/cosrx-low-ph-good-morning-gel-cleanser.jpg",
+    "image_path": ["/src/assets/cosrxlowph.jpg", "/src/assets/cosrxlowph2.jpg"],
     "price": 11.00,
     "vat_rate": 21,
     "stock_quantity": 85
@@ -144,7 +144,7 @@
     "merk": "Missha",
     "soort": "Time Revolution Artemisia Treatment Essence",
     "description": "Een essentie verrijkt met bijvoetextracten om de huid te kalmeren en te voeden.",
-    "image_path": "/images/missha-time-revolution-artemisia-treatment-essence.jpg",
+    "image_path": ["/src/assets/misshatimerevart.jpg", "/src/assets/misshatimerevart2.jpg"],
     "price": 33.50,
     "vat_rate": 21,
     "stock_quantity": 25
@@ -154,7 +154,7 @@
     "merk": "IUNIK",
     "soort": "Propolis Vitamin Synergy Serum",
     "description": "Een serum verrijkt met propolis en vitamine C voor een stralende en gehydrateerde huid.",
-    "image_path": "/images/iunik-propolis-vitamin-synergy-serum.jpg",
+    "image_path": ["/src/assets/iunikprop.jpg", "/src/assets/iunikprop2.jpg"],
     "price": 22.25,
     "vat_rate": 21,
     "stock_quantity": 55
@@ -162,9 +162,9 @@
   {
     "id": 17,
     "merk": "Anua",
-    "soort": "Honey Moisturizing Cream",
-    "description": "Een vochtinbrengende crème op basis van honingextracten voor een gehydrateerde huid.",
-    "image_path": "/images/anua-honey-moisturizing-cream.jpg",
+    "soort": "Heartleaf Cream Mask Night Solution",
+    "description": "Dit hydraterende sheet masker is een echte huidredder, dankzij het krachtige Heartleaf Extract dat niet alleen de gevoeligheid verzacht, maar ook moeiteloos onzuiverheden...",
+    "image_path": ["/src/assets/anuaheartleafmaskmain.jpg", "/src/assets/anuaheartleafmask2.jpg"],
     "price": 16.99,
     "vat_rate": 21,
     "stock_quantity": 70
@@ -174,7 +174,7 @@
     "merk": "Axis-y",
     "soort": "Quinoa One Step Balanced Gel Cleanser",
     "description": "Een gebalanceerde reinigingsgel met quinoa-extracten voor een gereinigde huid zonder uitdroging.",
-    "image_path": "/images/axis-y-quinoa-one-step-balanced-gel-cleanser.jpg",
+    "image_path": ["/src/assets/axisyquinoa.jpg", "/src/assets/axisyquinoa2.jpg"],
     "price": 24.50,
     "vat_rate": 21,
     "stock_quantity": 40
@@ -182,9 +182,9 @@
   {
     "id": 19,
     "merk": "Beauty Of Joseon",
-    "soort": "Revitalize Sleeping Mask",
+    "soort": "Centella Asiatica Calming Mask",
     "description": "Een herstellend slaapmasker dat de huid revitaliseert en voedt tijdens de nacht.",
-    "image_path": "/images/beauty-of-joseon-revitalize-sleeping-mask.jpg",
+    "image_path": ["/src/assets/CentellaMask800.jpg", "/src/assets/iunikcntellamask2.jpg"],
     "price": 25.99,
     "vat_rate": 21,
     "stock_quantity": 60
@@ -194,7 +194,7 @@
     "merk": "COSRX",
     "soort": "Hydrium Triple Hyaluronic Moisture Ampoule",
     "description": "Een ampul met drievoudig hyaluronzuur om de huid diep te hydrateren en te revitaliseren.",
-    "image_path": "/images/cosrx-hydrium-triple-hyaluronic-moisture-ampoule.jpg",
+    "image_path": ["/src/assets/hydriumcentellacosrx.jpg", "/src/assets/hydriumcentellacosrx2.jpg"],
     "price": 24.99,
     "vat_rate": 21,
     "stock_quantity": 50
