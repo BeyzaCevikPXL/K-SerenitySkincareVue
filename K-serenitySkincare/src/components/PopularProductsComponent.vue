@@ -1,5 +1,10 @@
 <script>
 export default {
+    data(){
+        return{
+            title: "Meest Populaire Producten"
+        }
+    },
     inject: ['productenData'],
     computed: {
         popularProducts() {
@@ -10,14 +15,14 @@ export default {
 };
 </script>
 <template>
-    <div>
-        <h2>Meest Populaire Producten</h2>
-        <ul>
-        <li v-for="product in popularProducts" :key="product.id">
-            <h3>{{ product.merk }} - {{ product.soort }}</h3>
-            <p>Op voorraad: {{ product.stock_quantity }}</p>
-        </li>
-        </ul>
+    <div class="producten">
+        <h2>{{ title }}</h2>
+        <div v-for="product in popularProducts" :key="product.id" class="product">
+            <a><img :src="product.image_path[0]" alt="Product afbeelding" />
+            <h2>{{ product.merk }} </h2>
+            <h2>{{ product.soort }}</h2>
+            <p>€{{ product.price }}</p></a>
+        </div>
     </div>
 </template>
 

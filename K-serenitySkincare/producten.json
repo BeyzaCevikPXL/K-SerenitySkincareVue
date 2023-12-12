@@ -124,7 +124,7 @@
     "merk": "Beauty Of Joseon",
     "soort": "Repair Serum: Ginseng+Snail Mucin",
     "description": "Een herstellend serum om veroudering en pigmentvlekken tegen te gaan.",
-    "image_path": ["/src/assets/beautyjosrepairserum.jpg", "/src/assets/beautyjosrepairserum2.jpg"],
+    "image_path": ["/src/assets/beaytyjosrepairserum2.jpg", "/src/assets/beautyjosrepairserum.jpg"],
     "price": 29.00,
     "vat_rate": 21,
     "stock_quantity": 95
