@@ -39,7 +39,7 @@ export default {
     <div class="content">
       <h1>{{ title }}</h1>
       <p>{{ subtitle }}</p>
-      <router-link to="/products"><button>{{ button }}</button></router-link>
+      <router-link to="/producten"><button>{{ button }}</button></router-link>
     </div>
   </div>
   <div class="info">

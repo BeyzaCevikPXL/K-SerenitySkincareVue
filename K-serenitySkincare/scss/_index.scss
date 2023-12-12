@@ -34,7 +34,7 @@
         }
     }
 }
-.navbar{
+#navbar{
      @include navbar-link-colors($tertiary-color, $secondary-color);
 }
   
