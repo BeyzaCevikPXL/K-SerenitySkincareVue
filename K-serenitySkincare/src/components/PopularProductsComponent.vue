@@ -21,7 +21,7 @@ export default {
             <a><img :src="product.image_path[0]" alt="Product afbeelding" />
             <h2>{{ product.merk }} </h2>
             <h2>{{ product.soort }}</h2>
-            <p>€{{ product.price }}</p></a>
+            <p>€{{ product.price.toFixed(2) }}</p></a>
         </div>
     </div>
 </template>

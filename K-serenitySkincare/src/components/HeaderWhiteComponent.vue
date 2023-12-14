@@ -2,10 +2,11 @@
 export default {
     data() {
             return {
-                logo: '../assets/Logo-White.svg',
+                logo: '../src/assets/Logo-White.svg',
                 alinks: [ "Home",
                 "Producten",
-                "Login"
+                "Login",
+                "Cart"
                 ],
                 isScrolled: false
             }

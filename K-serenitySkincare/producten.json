@@ -194,7 +194,7 @@
     "merk": "COSRX",
     "soort": "Hydrium Triple Hyaluronic Moisture Ampoule",
     "description": "Een ampul met drievoudig hyaluronzuur om de huid diep te hydrateren en te revitaliseren.",
-    "image_path": ["/src/assets/hydriumcentellacosrx.jpg", "/src/assets/hydriumcentellacosrx2.jpg"],
+    "image_path": ["/src/assets/hydriumcentellacosrx2.jpg", "/src/assets/hydriumcentellacosrx.jpg"],
     "price": 24.99,
     "vat_rate": 21,
     "stock_quantity": 50

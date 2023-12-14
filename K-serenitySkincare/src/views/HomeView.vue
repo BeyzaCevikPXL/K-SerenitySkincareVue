@@ -1,7 +1,7 @@
 <script>
-import productenData from '../../producten.json'
 import PopularProductsComponent from '../components/PopularProductsComponent.vue'
-import HeaderComponent from '../components/HeaderComponent.vue';
+import HeaderWhiteComponent from '../components/HeaderWhiteComponent.vue'
+import FooterComponent from '../components/FooterComponent.vue'
 import '@fortawesome/fontawesome-free/css/all.css';
 
 export default {
@@ -18,22 +18,21 @@ export default {
       contacttelefoontitle: "TELEFOON",
       contacttel: "+32 123 45 67 89",
       contactsocialstitle: "SOCIALS",
-      contactimage: '../assets/Layer 2.png'
+      contactimage: '../src/assets/Layer 2.png'
     }
   },
-  provide: {
-    productenData
-  },
+  inject:  ['productenData'],
   components: {
     PopularProductsComponent,
-    HeaderComponent
+    HeaderWhiteComponent,
+    FooterComponent
   }
 }
 </script>
 
 <template>
   <div>
-    <HeaderComponent />
+    <HeaderWhiteComponent />
   </div>
   <div class="background">
     <div class="content">
@@ -69,6 +68,9 @@ export default {
         <a href="#"><i class="fa-brands fa-square-x-twitter fa-2xl"></i></a>
     </div>
   </div> 
+  <div>
+    <FooterComponent></FooterComponent>
+  </div>
 </template>
 
 <style scoped>
