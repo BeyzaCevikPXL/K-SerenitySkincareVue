@@ -5,6 +5,7 @@
   }
   .product-page {
     @include flex-center;
+    flex-wrap: wrap;
   }
   
 .image-carousel {
@@ -29,6 +30,7 @@
     .carousel-arrows {
         @include flex-center;
         width: 100%;
+        z-index: 999;
         span{
             margin: 0 50px 0;
             color: $tertiary-color;
@@ -42,6 +44,7 @@
 
   .product-details {  
     max-width: 40%;
+    margin-left: 20px; 
     .brand,
     .product-name,
     .review,
@@ -71,16 +74,20 @@
         color: $secondary-color;
     }
     .quantity{
+      display: flex;
       button{
         background-color: $primary-color;
         @include button-border(false);
       }
-      span{
-        padding: 10px;
+      input{
+        text-align: center;
       }
 
     }
-
+    .sold-out {
+      color: red;
+      font-weight: bold;
+    }
     .add-to-cart{
       background-color: #000;
       color: $tertiary-color;

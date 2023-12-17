@@ -48,6 +48,14 @@ export default {
     setCurrentPage(page) {
       this.currentPage = page;
     },
+    onProductSelected(selectedProduct) {
+      console.log('Clicked product:', selectedProduct);
+      if (selectedProduct && selectedProduct.id) {
+        this.$router.push(`/product/${selectedProduct.id}`);
+      } else {
+        console.error('Selected product or product id is missing or undefined');
+      }
+    },
   },
 }
 </script>
@@ -77,7 +85,7 @@ export default {
     <div class="product-grid">
       <div class="product-row">
         <ProductCardComponent v-for="product in displayedProducts" :key="product.id" :product="product"
-          class="product-card" />
+          class="product-card" @product-selected="onProductSelected"/>
       </div>
 
     </div>

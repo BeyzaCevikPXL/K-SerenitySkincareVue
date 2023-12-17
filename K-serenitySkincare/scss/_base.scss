@@ -62,13 +62,6 @@ body{
       height: auto;
   }
 }
-/*#navbarjs.scrolled{
-  background-color: $secondary-color;
-  transition: background-color 0.5s ease;
-  &:hover{
-    color: #fff7f7;
-  }
-}*/
 #navbarpro{
   @include navbar-link-colors($secondary-color, #422323);
 }

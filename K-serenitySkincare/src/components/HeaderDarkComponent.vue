@@ -1,16 +1,30 @@
 <script>
+import { useCartStore } from '../store/cartStore.js';
+
 export default {
     data() {
-            return {
-                logo: '../src/assets/Logo-zwart.svg',
-                alinks: [ "Home",
+        return {
+            logo: '../src/assets/Logo-zwart.svg',
+            alinks: ["Home",
                 "Producten",
                 "Login",
                 "Cart"
-                ],
-                isScrolled: false
-            }
-        },
+            ],
+            isScrolled: false,
+        }
+    },
+    computed: {
+        cartItemsCount() {
+            const cartStore = useCartStore(); 
+            return cartStore.cartItemsCount; 
+        }
+    },
+    watch: {
+    cartItemsCount(newValue) {
+      this.cartCount = newValue; // Update cartCount bij elk add
+    }
+  },
+}
 /*         mounted() {
             window.addEventListener('scroll', this.handleScroll);
         },
@@ -22,7 +36,6 @@ export default {
                 }
             },
         }, */
-}
 </script>
 
 <template>
@@ -33,14 +46,13 @@ export default {
         <div :class="{ 'scrolled': isScrolled }" id="navbarpro">
             <ul>
                 <li v-for="(link, index) in alinks" :key="index">
-                    <router-link :to="link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`">{{ link }}</router-link>
+                    <router-link :to="link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`">{{ link }}
+                        <span v-if="link.toLowerCase() === 'cart' && cartItemsCount > 0">({{ cartItemsCount }})</span>
+                    </router-link>
                 </li>
             </ul>
         </div>
     </div>
-
 </template>
 
-<style>
-    
-</style>
+<style></style>

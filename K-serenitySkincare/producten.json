@@ -17,7 +17,7 @@
     "image_path": ["/src/assets/AdvancedsnailCOSRX.jpg", "/src/assets/advancedsnailcosrc2.jpg"],
     "price": 18.50,
     "vat_rate": 21,
-    "stock_quantity": 99
+    "stock_quantity": 0
   },
   {
     "id": 3,
@@ -127,7 +127,7 @@
     "image_path": ["/src/assets/beaytyjosrepairserum2.jpg", "/src/assets/beautyjosrepairserum.jpg"],
     "price": 29.00,
     "vat_rate": 21,
-    "stock_quantity": 95
+    "stock_quantity": 5
   },
   {
     "id": 14,
