@@ -28,12 +28,6 @@ const router = createRouter({
             path: "/cart",
             component: CartView
         },
-
-        /*,
-        {
-            path: '/:notFound(.*)',
-            component: PageNotFoundView
-        } altijd als laatst*/
     ]
 })
 

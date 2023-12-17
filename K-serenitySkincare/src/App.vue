@@ -1,7 +1,7 @@
 <script>
-export default{
+export default {
   mounted() {
-      document.title = 'K-Serenity Skincare';
+    document.title = 'K-Serenity Skincare';
   }
 }
 </script>
@@ -12,6 +12,5 @@ export default{
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
 
