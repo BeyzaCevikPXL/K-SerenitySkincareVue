@@ -1,0 +1,118 @@
+@use 'base' as *;
+
+.shopping-cart {
+  margin: 125px 0 0 0;
+  padding: 20px;
+  background-color: $tertiary-color;
+
+  h1 {
+    font-family: $font-bodoni;
+    text-align: center;
+    color: $secondary-color;
+  }
+
+  h2 {
+    font-family: $font-mulish;
+    color: $secondary-color;
+  }
+
+  p {
+    font-family: $font-mulish;
+  }
+
+  .shopping-body {
+    display: flex;
+    padding-left: 100px;
+    width: 100%;
+    .shopping-cart-items{
+      width: 50%;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .shopping-cart-item {
+      width: 70%;
+      .shopping-product-details {
+        display: flex;
+        gap: 70px;
+        .shopping-product-image {
+          margin-right: 15px;
+          width: 30%;
+          img{
+            max-width: 250px;
+            object-fit: contain;
+            display: block;
+          }
+        }
+
+        .shopping-info {
+          flex: 1;
+          .shopping-quantity-input{
+            width: 10%;
+          }
+          .shopping-remove-button {
+            background-color: $secondary-color;
+            color: $tertiary-color;
+            @include button-border(false);
+            margin-top: 20px;    
+            &:hover {
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+
+    .cart-summary {
+      width: 30%;
+      padding: 30px;
+      background-color: white;
+      border: 1px solid #ccc;
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+
+        .summary-value {
+          text-align: left;
+        }
+        .summary-bold {
+          font-size: 700;
+        }
+
+        div {
+          font-family: $font-mulish;
+
+        }
+      }
+
+      .checkout-button {
+        background-color: #000;
+        color: $tertiary-color;
+        @include button-border(false);
+        margin-top: 20px;
+        width: 100%;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  .empty-cart-message {
+    text-align: center;
+    font-size: $font-md-size;
+    button {
+      background-color: #000;
+      color: $tertiary-color;
+      @include button-border(false);
+      margin-top: 20px;
+      font-size: 1em;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}

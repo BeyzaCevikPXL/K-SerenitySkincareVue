@@ -4,7 +4,7 @@ export default {
             return {
                 logo: '../src/assets/Logo-White.svg',
                 alinks: [ "Home",
-                "Producten",
+                "Products",
                 "Login",
                 "Cart"
                 ],

@@ -12,18 +12,18 @@ export const useCartStore = defineStore( {
       const existingCartItemIndex = this.cartItems.findIndex(item => item.product.id === product.id);
 
       if (existingCartItemIndex !== -1) {
-        // If the product already exists in the cart, update its quantity
         this.cartItems[existingCartItemIndex].quantity += quantity;
       } else {
-        // If the product is not in the cart, add it with the specified quantity
         this.cartItems.push({ product, quantity });
       }
     },
-    removeFromCart(index) {
-      this.items.splice(index, 1);
-    },
-  },
-  // Add other actions as needed: updateCart, clearCart, etc.
+    removeFromCart(productId) {
+      const index = this.cartItems.findIndex(item => item.product.id === productId);
+      if (index !== -1) {
+        this.cartItems = this.cartItems.filter(item => item.product.id !== productId);
+      }
+  }
+},
   getters: {
     cartItemsCount(state) {
       let totalQuantity = 0;
@@ -36,6 +36,5 @@ export const useCartStore = defineStore( {
       const item = state.cartItems.find((item) => item.product.id === productId);
       return item ? item.quantity : 0;
     },
-    // Add other getters as needed: totalPrice, cartItems, etc.
   },
 });
