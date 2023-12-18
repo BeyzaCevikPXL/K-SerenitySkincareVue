@@ -45,23 +45,19 @@ export default {
       }
     },
     addToCart() {
-      const selectedProduct = this.product; // Get the selected product
-      const selectedQuantity = this.selectedQuantity; // Get the selected quantity
+      const selectedProduct = this.product;
+      const selectedQuantity = this.selectedQuantity;
 
-      // Call addToCart action from store with product and quantity
       const cartStore = useCartStore();
       const quantityInCart = cartStore.getQuantityForProduct(selectedProduct.id);
       const totalQuantity = quantityInCart + selectedQuantity;
 
-      // Check if the total quantity exceeds the available stock
       if (totalQuantity <= this.maxAvailableQuantity) {
-        // Add the product to the cart
         cartStore.addToCart({ product: selectedProduct, quantity: selectedQuantity });
 
         console.log(`Added ${selectedQuantity} of ${selectedProduct.merk} to the cart.`);
       } else {
         console.log('Adding more exceeds available stock.');
-        // Handle the case where adding more items exceeds the available stock
       }
     }
   },
@@ -95,21 +91,22 @@ export default {
             <span @click="nextImage()">→</span>
           </div>
         </div>
+        <div class="product-details">
+          <div class="brand">{{ product.merk }}</div>
+          <div class="product-name">{{ product.soort }}</div>
+          <div class="availability" :class="{ 'sold-out': isSoldOut }">{{ displayAvailability }}</div>
+          <div class="description">{{ product.description }}</div>
+          <div class="price">Price: €{{ product.price }}</div>
+          <div class="quantity">
+            <button @click="decreaseQuantity">-</button>
+            <input type="number" v-model="selectedQuantity" min="1" :max="maxAvailableQuantity">
+            <button @click="increaseQuantity">+</button>
+          </div>
+          <button @click="addToCart" class="add-to-cart">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-details">
-        <div class="brand">{{ product.merk }}</div>
-        <div class="product-name">{{ product.soort }}</div>
-        <div class="availability" :class="{ 'sold-out': isSoldOut }">{{ displayAvailability }}</div>
-        <div class="description">{{ product.description }}</div>
-        <div class="price">Price: €{{ product.price }}</div>
-        <div class="quantity">
-          <button @click="decreaseQuantity">-</button>
-          <input type="number" v-model="selectedQuantity" min="1" :max="maxAvailableQuantity">
-          <button @click="increaseQuantity">+</button>
-        </div>
-        <button @click="addToCart" class="add-to-cart">Add to Cart</button>
-      </div>
+
     </div>
   </div>
   <FooterComponent></FooterComponent>

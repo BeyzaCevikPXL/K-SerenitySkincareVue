@@ -5,7 +5,6 @@
   }
   .product-page {
     @include flex-center;
-    flex-wrap: wrap;
   }
   
 .image-carousel {
@@ -13,27 +12,26 @@
     flex-direction: column;
     margin: 50px 75px 50px 0;
     overflow: hidden;
-    width: 500px;
+    width: 40%;
     .image {
       width: 500px;
-      height: 550px;
       display: none;
       margin-bottom: 10px;
       img {
         width: 100%;
-        height: auto;
+        border-radius: 25px;
       }
     }
     .image.active {
         display: block;
+        max-height: 500px;
       }
     .carousel-arrows {
         @include flex-center;
         width: 100%;
-        z-index: 999;
         span{
             margin: 0 50px 0;
-            color: $tertiary-color;
+            color: $secondary-color;
         }
     }
     span {
