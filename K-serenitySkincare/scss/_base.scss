@@ -115,6 +115,9 @@ footer{
   font-family: $font-bodoni;
   color: $secondary-color;
   @include flex-center;
+  position: fixed;
+  bottom: 0;
+  width: 100%
 }
 
 //media query

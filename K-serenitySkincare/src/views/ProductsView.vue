@@ -33,7 +33,6 @@ export default {
       return this.productenData.slice(startIndex, endIndex);
     },
   },
-  inject: ['productenData'],
   methods: {
     previousPage() {
       if (this.currentPage > 1) {
