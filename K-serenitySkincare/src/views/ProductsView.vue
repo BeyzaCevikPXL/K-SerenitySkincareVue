@@ -14,6 +14,8 @@ export default {
       paginationvolgende: "Volgende",
       currentPage: 1,
       itemsPerPage: 8,
+      selectedBrandFilter: '',
+      selectedPriceFilter: '',
     }
   },
   components: {
@@ -25,12 +27,34 @@ export default {
   computed: {
     totalPages() {
       //afronden math ceil
-      return Math.ceil(this.productenData.length / this.itemsPerPage);
+      return Math.ceil(this.filteredProducts.length / this.itemsPerPage);
+    },
+    filteredProducts() {
+      let products = [...this.productenData];
+
+      if (this.selectedBrandFilter) {
+        products = products.filter(product => product.merk === this.selectedBrandFilter);
+      }
+
+      if (this.selectedPriceFilter) {
+        if (this.selectedPriceFilter !== 'all') {
+        const [minPrice, maxPrice] = this.selectedPriceFilter.split('-');
+        products = products.filter(product => product.price >= minPrice && product.price < maxPrice);
+      }}
+
+      return products;
     },
     displayedProducts() {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
-      return this.productenData.slice(startIndex, endIndex);
+      return this.filteredProducts.slice(startIndex, endIndex);
+    },
+    uniqueBrands() {
+      const brands = new Set();
+      this.productenData.forEach(product => {
+        brands.add(product.merk); 
+      });
+      return Array.from(brands);
     },
   },
   methods: {
@@ -46,6 +70,17 @@ export default {
     },
     setCurrentPage(page) {
       this.currentPage = page;
+    },
+    handleBrandFilterChange(value) {
+      this.selectedBrandFilter = value;
+      this.currentPage = 1; 
+    },
+    handlePriceFilterChange(range) {
+      if (range === 'all') {
+        this.selectedPriceFilter = null; 
+      } else {
+        this.selectedPriceFilter = range; 
+      }
     },
     //debugg
     onProductSelected(selectedProduct) {
@@ -73,26 +108,34 @@ export default {
     <div class="filter">
       <div class="filter-col">
         <label for="merk-filter">{{ filtertitle }}</label>
-        <select id="merk-filter">
-          <option value="merk1">Merk 1</option>
-          <option value="merk2">Merk 2</option>
+        <select id="merk-filter" class="prijs-filter" @change="handleBrandFilterChange($event.target.value)">
+          <option value="">Alle merken</option>
+          <option v-for="brand in uniqueBrands" :key="brand" :value="brand">{{ brand }}</option>
         </select>
         <!--moet js nog doen-->
-        <label for="prijs-filter" class="prijs-filter">{{ filtertitletwo }}</label>
-        <input type="range" id="prijs-filter" min="0" max="1000">
+        <label for="prijs-filter" class="prijs-filter-groot">{{ filtertitletwo }}</label>
+        <select id="prijs-filter" class="prijs-filter" @change="handlePriceFilterChange($event.target.value)">
+          <option value="all">Alle prijzen</option>
+          <option value="0-10">0 - 10</option>
+          <option value="10-20">10 - 20</option>
+          <option value="20-30">20 - 30</option>
+          <option value="30-40">30 - 40</option>
+          <option value="40-50">40 - 50</option>
+        </select>
       </div>
     </div>
     <div class="product-grid">
       <div class="product-row">
         <ProductCardComponent v-for="product in displayedProducts" :key="product.id" :product="product"
-          class="product-card" @product-selected="onProductSelected"/>
+          class="product-card" @product-selected="onProductSelected" />
       </div>
 
     </div>
     <div class="pagination">
       <button @click="previousPage" :disabled="currentPage === 1">&laquo; {{ pagination }}</button>
-      <button v-for="page in totalPages" :key="page" @click="setCurrentPage(page)" :class="{ active: currentPage === page }">{{ page }}</button>
-      <button @click="nextPage"  :disabled="currentPage === totalPages">{{ paginationvolgende }} &raquo;</button>
+      <button v-for="page in totalPages" :key="page" @click="setCurrentPage(page)"
+        :class="{ active: currentPage === page }">{{ page }}</button>
+      <button @click="nextPage" :disabled="currentPage === totalPages">{{ paginationvolgende }} &raquo;</button>
     </div>
   </div>
   <div>
