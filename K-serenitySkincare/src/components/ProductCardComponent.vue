@@ -1,5 +1,10 @@
 <script>
 export default {
+  data(){
+    return{
+      munt: "€ "
+    }
+  },
   inject: ['productenData'],
   props: {
     product: Object
@@ -24,7 +29,7 @@ export default {
         <img :src="product.image_path[0]" :alt="`Product ${product.id}`">
         <h2>{{ product.merk }}</h2>
         <p>{{ product.soort }}</p>
-        <p class="prijskleur">€{{ product.price.toFixed(2) }}</p>
+        <p class="prijskleur">{{ munt + product.price.toFixed(2) }}</p>
       </a>
     </router-link>
   </div>

@@ -17,8 +17,8 @@ export default {
             total: "Totaal:",
             button: "BESTELLEN",
             empty: "Je winkelwagen is leeg",
-            gobackbutton: "Ga terug"
-
+            gobackbutton: "Ga terug",
+            munt: "€ "
         }
     },
     components: {
@@ -83,7 +83,7 @@ export default {
                             <div class="shopping-quantity">
                                 <input type="number" v-model="item.quantity" min="1" class="shopping-quantity-input">
                             </div>
-                            <p class="shopping-subtotal">€ {{ (item.product.price * item.quantity).toFixed(2) }}</p>
+                            <p class="shopping-subtotal">{{ munt + (item.product.price * item.quantity).toFixed(2) }}</p>
                             <button @click="removeFromCart(item.product.id)" class="shopping-remove-button">{{ remove
                             }}</button>
                         </div>
@@ -97,12 +97,12 @@ export default {
                     <div class="summary-value">{{ calculateTotalProducts() }}</div>
 
                     <div class="summary-label">{{ subtotaal }}</div>
-                    <div class="summary-value">€ {{ calculateSubtotal().toFixed(2) }}</div>
+                    <div class="summary-value">{{ munt + calculateSubtotal().toFixed(2) }}</div>
 
                     <div class="summary-label">{{ btw }}</div>
-                    <div class="summary-value">€ {{ calculateBTW().toFixed(2) }}</div>
+                    <div class="summary-value">{{ munt + calculateBTW().toFixed(2) }}</div>
                     <div class="summary-label"><b>{{ total }}</b></div>
-                    <div class="summary-value"><b>€ {{ calculateTotal().toFixed(2) }}</b></div>
+                    <div class="summary-value"><b>{{ munt +calculateTotal().toFixed(2) }}</b></div>
                 </div>
                 <button @click="goToCheckout" class="checkout-button">{{ button }}</button>
             </div>

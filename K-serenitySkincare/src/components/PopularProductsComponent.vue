@@ -2,7 +2,9 @@
 export default {
     data(){
         return{
-            title: "Meest Populaire Producten"
+            title: "Meest Populaire Producten",
+            munt: "€ "
+
         }
     },
     inject: ['productenData'],
@@ -21,7 +23,7 @@ export default {
             <a><img :src="product.image_path[0]" alt="Product afbeelding" />
             <h2>{{ product.merk }} </h2>
             <h2>{{ product.soort }}</h2>
-            <p>€{{ product.price.toFixed(2) }}</p></a>
+            <p>{{ munt + product.price.toFixed(2) }}</p></a>
         </div>
     </div>
 </template>
