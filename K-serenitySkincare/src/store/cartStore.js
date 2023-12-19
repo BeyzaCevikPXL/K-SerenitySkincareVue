@@ -74,6 +74,9 @@ export const useCartStore = defineStore({
       this.cartItems = [];
       this.isLoggedIn = false;
     },
+    clearCart() {
+      this.cartItems = []; 
+    },
   },
   getters: {
     cartItemsCount(state) {

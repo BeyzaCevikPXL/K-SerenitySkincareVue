@@ -32,6 +32,10 @@ export default {
         },
         calculateTotal() {
             return this.calculateSubtotal() + this.calculateBTW();
+        },
+        clearCart() {
+            const cartStore = useCartStore();
+            cartStore.clearCart(); 
         }
     }
 }
@@ -44,7 +48,7 @@ export default {
         <div class="bevestig-flex">
             <h1>{{ title }}</h1>
             <h3>{{ subtitle }}</h3>
-            <router-link to="/products"><button>{{ button }}</button></router-link>
+            <router-link to="/products"><button @click="clearCart">{{ button }}</button></router-link>
         </div>
         <div class="bevestig-producten">
             <h2>{{ overzicht }}</h2>
