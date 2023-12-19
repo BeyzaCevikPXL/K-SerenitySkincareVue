@@ -13,6 +13,8 @@ export default {
       product: null,
       activeImageIndex: 0,
       selectedQuantity: 1,
+      munt: "€ ",
+      winkelwagenbutton: "IN WINKELWAGEN"
     };
   },
   inject: ['productenData'],
@@ -96,13 +98,13 @@ export default {
           <div class="product-name">{{ product.soort }}</div>
           <div class="availability" :class="{ 'sold-out': isSoldOut }">{{ displayAvailability }}</div>
           <div class="description">{{ product.description }}</div>
-          <div class="price">Price: €{{ product.price }}</div>
+          <div class="price">{{ munt + product.price }}</div>
           <div class="quantity">
             <button @click="decreaseQuantity">-</button>
             <input type="number" v-model="selectedQuantity" min="1" :max="maxAvailableQuantity">
             <button @click="increaseQuantity">+</button>
           </div>
-          <button @click="addToCart" class="add-to-cart">Add to Cart</button>
+          <button @click="addToCart" class="add-to-cart">{{ winkelwagenbutton }}</button>
         </div>
       </div>
 

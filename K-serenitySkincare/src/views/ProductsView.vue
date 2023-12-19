@@ -47,6 +47,7 @@ export default {
     setCurrentPage(page) {
       this.currentPage = page;
     },
+    //debugg
     onProductSelected(selectedProduct) {
       console.log('Clicked product:', selectedProduct);
       if (selectedProduct && selectedProduct.id) {

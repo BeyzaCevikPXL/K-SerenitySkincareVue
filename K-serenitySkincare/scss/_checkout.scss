@@ -2,8 +2,6 @@
 
 .checkout-body {
     background-color: $tertiary-color;
-
-
 }
 
 .checkout-container {
@@ -112,7 +110,6 @@
             }
 
             .total-section {
-                margin-top: 60px;
                 flex: 1;
                 padding-left: 20px;
                 padding-top: 20px;
@@ -124,7 +121,6 @@
 
                 .total-summary-label {
                     text-align: left;
-                    margin: 5px 0;
                     font-family: $font-mulish;
                 }
 
@@ -140,6 +136,7 @@
             color: $tertiary-color;
             @include button-border(false);
             margin-top: 20px;
+            width: 70%;
             &:hover {
                 background-color: $secondary-color;
             }

@@ -17,7 +17,9 @@ export default {
             totaalbtw: "Btw 21%:",
             totaal: "TOTAAL:",
             buttonbevestig: "BEVESTIG BETALING",
-            showBillingForm: false
+            showBillingForm: false, 
+            munt: "€"
+
         }
     },
     components: {
@@ -98,13 +100,13 @@ export default {
                     </div>
                     <div class="total-section">
                         <div class="total-summary-label">{{ totaalsub }}</div>
-                        <div class="total-summary-value">€ {{ calculateSubtotal().toFixed(2) }}</div>
+                        <div class="total-summary-value">{{ munt + calculateSubtotal().toFixed(2) }}</div>
                         <div class="total-summary-label">{{ totaalbtw }}</div>
-                        <div class="total-summary-value">€ {{ calculateBTW().toFixed(2) }}</div>
+                        <div class="total-summary-value">{{ munt + calculateBTW().toFixed(2) }}</div>
                         <div class="total-summary-label"><b>{{ totaal }}</b></div>
-                        <div class="total-summary-value">€ {{ calculateTotal().toFixed(2) }}</div>
-                        <button @click="confirmPayment" id="confirmButton">{{ buttonbevestig }}</button>
+                        <div class="total-summary-value">{{ munt + calculateTotal().toFixed(2) }}</div>
                     </div>
+                    <button @click="confirmPayment" id="confirmButton">{{ buttonbevestig }}</button>
                 </div>
             </div>
         </div>

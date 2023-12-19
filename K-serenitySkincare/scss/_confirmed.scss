@@ -1,0 +1,67 @@
+@use 'base' as *;
+
+.body-bevestig{
+    background-color: $tertiary-color;
+    padding-top: 5em;
+    .bevestig-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-mulish;
+        margin-bottom: 20px;
+        button{
+            font-family: $font-mulish;
+            background-color: $secondary-color;
+            color: $tertiary-color;
+            @include button-border(false);
+            margin-top: 20px;
+            &:hover {
+              background-color: black;
+            }
+        }
+    }
+    .bevestig-producten{
+        border: 1px $primary-color solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        div{
+            font-weight: bold;
+            font-family: $font-mulish;
+        }
+        .bevestig-producten-items{
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 25%;
+                height: auto;
+                margin-right: 30px;
+            }
+            
+        }
+        h2{
+            font-weight: bold;
+            font-family: $font-mulish;
+        }
+        .bevestig-product {
+            display: flex;
+            flex-direction: column;
+            h3 {
+                font-weight: bold;
+                font-family: $font-mulish;
+            }
+            p{
+                font-family: $font-mulish;
+            }
+            .bevestig-quantity {
+                color: #888;
+                font-family: $font-mulish;
+            }
+        }
+    }
+}
+
