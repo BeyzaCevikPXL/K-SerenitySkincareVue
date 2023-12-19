@@ -17,7 +17,7 @@ export default {
             totaalbtw: "Btw 21%:",
             totaal: "TOTAAL:",
             buttonbevestig: "BEVESTIG BETALING",
-            showBillingForm: false, 
+            showBillingForm: false,
             munt: "€"
 
         }
@@ -46,6 +46,10 @@ export default {
         cartItems() {
             const cartStore = useCartStore();
             return cartStore.cartItems;
+        },
+        loggedInUser() {
+            const cartStore = useCartStore();
+            return cartStore.currentUser;
         }
     },
 }
@@ -64,18 +68,18 @@ export default {
                 <div class="address-section">
                     <h3>{{ subtitle }}</h3>
                     <form class="shipping-form" id="shippingForm">
-                        <input type="text" id="firstName" name="firstName" placeholder="Voornaam" required><br>
-                        <input type="text" id="lastName" name="lastName" placeholder="Achternaam" required><br>
-                        <input type="text" id="country" name="country" placeholder="Land" required><br>
-                        <input type="text" id="address" name="address" placeholder="Straat" required><br>
-                        <input type="text" id="husnummer" name="huisnummer" placeholder="Huisnummer" required><br>
-                        <input type="text" id="postalCode" name="postalCode" placeholder="Postcode" required><br>
-                        <input type="text" id="city" name="city" placeholder="Plaats" required><br>
-                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="GSM-nummer" required><br>
+                        <input type="text" id="firstName" name="firstName" placeholder="Voornaam" v-model="loggedInUser.address.naam" required><br>
+                        <input type="text" id="lastName" name="lastName" placeholder="Achternaam" v-model="loggedInUser.address.achternaam" required><br>
+                        <input type="text" id="country" name="country" placeholder="Land" v-model="loggedInUser.address.land" required><br>
+                        <input type="text" id="address" name="address" placeholder="Straat" v-model="loggedInUser.address.straat" required><br>
+                        <input type="text" id="husnummer" name="huisnummer" placeholder="Huisnummer" v-model="loggedInUser.address.straatnr" required><br>
+                        <input type="text" id="postalCode" name="postalCode" placeholder="Postcode" v-model="loggedInUser.address.postcode" required><br>
+                        <input type="text" id="city" name="city" placeholder="Plaats" v-model="loggedInUser.address.city" required><br>
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="GSM-nummer" v-model="loggedInUser.address.gsm" required><br>
                     </form>
                     <input type="checkbox" id="differentBilling" v-model="showBillingForm">
                     <label for="differentBilling">{{ checkboxje }}</label>
-                    <div v-show="showBillingForm"> 
+                    <div v-show="showBillingForm">
                         <h3>{{ subtwee }}</h3>
                         <form class="shipping-form" id="billingForm">
                             <input type="text" id="firstName" name="firstName" placeholder="Voornaam" required><br>

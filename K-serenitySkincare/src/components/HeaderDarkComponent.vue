@@ -10,32 +10,39 @@ export default {
                 "Login",
                 "Cart"
             ],
-            isScrolled: false,
+            uitloggen: "Logout"
         }
+    },
+    
+    actions: {
+
+        logout() {
+            this.isLoggedIn = false;
+        },
     },
     computed: {
         cartItemsCount() {
-            const cartStore = useCartStore(); 
-            return cartStore.cartItemsCount; 
-        }
+            const cartStore = useCartStore();
+            return cartStore.cartItemsCount;
+        },
+        isLoggedIn() {
+            const cartStore = useCartStore();
+            return cartStore.isLoggedIn;
+        },
     },
     watch: {
-    cartItemsCount(newValue) {
-      this.cartCount = newValue; // Update cartCount bij elk add
-    }
-  },
-}
-/*         mounted() {
-            window.addEventListener('scroll', this.handleScroll);
+        cartItemsCount(newValue) {
+            this.cartCount = newValue;
+        }
+    },
+    methods: {
+        logoutUser() {
+            const cartStore = useCartStore();
+            cartStore.logout();
+            this.$router.push('/login');
         },
-        methods: {
-            handleScroll() {
-                this.isScrolled = window.scrollY > 100;
-                if (!this.isScrolled) {
-                    window.removeEventListener('scroll', this.handleScroll);
-                }
-            },
-        }, */
+    }
+}
 </script>
 
 <template>
@@ -43,12 +50,14 @@ export default {
         <div class="logo">
             <img :src="logo" alt="logo">
         </div>
-        <div :class="{ 'scrolled': isScrolled }" id="navbarpro">
+        <div id="navbarpro">
             <ul>
                 <li v-for="(link, index) in alinks" :key="index">
-                    <router-link :to="link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`">{{ link }}
+                    <router-link v-if="link.toLowerCase() !== 'login' || !isLoggedIn"
+                        :to="link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`">{{ link }}
                         <span v-if="link.toLowerCase() === 'cart' && cartItemsCount > 0">({{ cartItemsCount }})</span>
                     </router-link>
+                    <button v-else @click="logoutUser" class="loguit">{{ uitloggen }}</button>
                 </li>
             </ul>
         </div>
