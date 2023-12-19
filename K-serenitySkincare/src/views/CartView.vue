@@ -17,8 +17,9 @@ export default {
             total: "Totaal:",
             button: "BESTELLEN",
             empty: "Je winkelwagen is leeg",
-            gobackbutton: "Ga terug",
-            munt: "€ "
+            gobackbutton: "Ga naar producten",
+            munt: "€ ",
+            winkelwagenoverzicht: 'Winkelwagenoverzicht'
         }
     },
     components: {
@@ -55,7 +56,7 @@ export default {
             return this.calculateSubtotal() + this.calculateBTW();
         },
         goBack() {
-            this.$router.go(-1);
+            this.$router.push('/products');
         },
         goToCheckout() {
             this.$router.push('/checkout');
@@ -91,7 +92,7 @@ export default {
                 </div>
             </div>
             <div class="cart-summary" v-if="cartItems.length > 0">
-                <h2>Winkelwagenoverzicht</h2>
+                <h2>{{ winkelwagenoverzicht }}</h2>
                 <div class="summary-grid">
                     <div class="summary-label">{{ totalproducts }}</div>
                     <div class="summary-value">{{ calculateTotalProducts() }}</div>

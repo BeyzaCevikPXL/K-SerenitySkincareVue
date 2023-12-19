@@ -6,16 +6,16 @@ $tertiary-color: #fff7f7;
 $font-bodoni: 'Bodoni Moda', serif;
 $font-mulish: 'Mulish', sans-serif;
 
-$font-xl-size: 6.25em; 
-$font-lg-size: 2.5em; 
+$font-xl-size: 6.25em;
+$font-lg-size: 2.5em;
 $font-md-size: 1.875em;
-$font-sm-size: 1.25em; 
-$font-btn-size: 1.25em; 
+$font-sm-size: 1.25em;
+$font-btn-size: 1.25em;
 
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @mixin navbar-link-colors($normal-color, $hover-color) {
@@ -25,7 +25,8 @@ body{
   top: 0;
   right: 0;
   padding: 40px 50px 25px;
-  z-index: 999; 
+  z-index: 999;
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -36,7 +37,8 @@ body{
       margin: 50px;
     }
   }
-  a{
+
+  a {
     text-decoration: none;
     font-family: $font-mulish;
     font-size: $font-sm-size;
@@ -47,10 +49,12 @@ body{
       color: $hover-color;
     }
   }
-  .active{
+
+  .active {
     font-weight: bolder;
   }
 }
+
 .logo {
   left: 50px;
   top: 30px;
@@ -58,36 +62,42 @@ body{
   position: fixed;
 
   img {
-      width: 200px;
-      height: auto;
+    width: 200px;
+    height: auto;
   }
 }
-#navbarpro{
+
+#navbarpro {
   @include navbar-link-colors($secondary-color, #422323);
 }
+
 @mixin flex-center($justify: center) {
-    display: flex;
-    align-items: center;
-    justify-content: $justify;
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
 }
+
 //text over image
-@mixin imagetext(){
-    position: relative;
-    text-align: center;
+@mixin imagetext() {
+  position: relative;
+  text-align: center;
 }
+
 //text over image positie geven
 @mixin position-absolute($top: null, $bottom: null) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    @if $top {
-      top: $top;
-    }
-    @else if $bottom {
-      bottom: $bottom;
-    }
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  @if $top {
+    top: $top;
   }
-  
+
+  @else if $bottom {
+    bottom: $bottom;
+  }
+}
+
 //btn
 @mixin button-border($border: true) {
   font-family: $font-mulish;
@@ -95,22 +105,26 @@ body{
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+
   @if $border {
     border: 1px solid $tertiary-color;
-  } @else {
+  }
+
+  @else {
     border: none;
   }
 }
 
-.background-producten{
+.background-producten {
   background-color: $tertiary-color;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
 //footer
-footer{
+footer {
   background-color: $primary-color;
   font-family: $font-bodoni;
   color: $secondary-color;
@@ -121,12 +135,21 @@ footer{
 //media query
 @media (max-width: 768px) {
   body {
-    font-size: 0.875em; 
+    font-size: 0.875em;
   }
 }
 
 @media (max-width: 576px) {
   body {
     font-size: 0.75em;
+  }
+}
+
+.loguit {
+  background-color: $secondary-color;
+  color: $tertiary-color;
+  @include button-border(false);
+  &:hover {
+    background-color: black;
   }
 }

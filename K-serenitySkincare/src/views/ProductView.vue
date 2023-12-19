@@ -53,13 +53,16 @@ export default {
       const cartStore = useCartStore();
       const quantityInCart = cartStore.getQuantityForProduct(selectedProduct.id);
       const totalQuantity = quantityInCart + selectedQuantity;
+      if (cartStore.isLoggedIn) {
+        if (totalQuantity <= this.maxAvailableQuantity) {
+          cartStore.addToCart({ product: selectedProduct, quantity: selectedQuantity });
 
-      if (totalQuantity <= this.maxAvailableQuantity) {
-        cartStore.addToCart({ product: selectedProduct, quantity: selectedQuantity });
-
-        console.log(`Added ${selectedQuantity} of ${selectedProduct.merk} to the cart.`);
+          console.log(`Added ${selectedQuantity} of ${selectedProduct.merk} to the cart.`);
+        } else {
+          console.log('Adding more exceeds available stock.');
+        }
       } else {
-        console.log('Adding more exceeds available stock.');
+        this.$router.push('/login');
       }
     }
   },
