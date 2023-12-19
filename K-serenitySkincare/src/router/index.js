@@ -4,6 +4,8 @@ import ProductsView from '../views/ProductsView.vue'
 import ProductView from '../views/ProductView.vue'
 import LoginView from '../views/LoginView.vue'
 import CartView from '../views/CartView.vue'
+import CheckoutView from '../views/CheckoutView.vue'
+import ConfirmedView from '../views/ConfirmedView.vue'
 /*import PageNotFoundView from '../views/PageNotFoundView.vue'*/
 
 const router = createRouter({
@@ -27,6 +29,14 @@ const router = createRouter({
         {
             path: "/cart",
             component: CartView
+        },
+        {
+            path: "/checkout",
+            component: CheckoutView
+        },
+        {
+            path: "/confirmed",
+            component: ConfirmedView
         },
     ]
 })
