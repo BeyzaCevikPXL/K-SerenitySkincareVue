@@ -22,8 +22,7 @@
 
   .shopping-body {
     display: flex;
-    padding-left: 100px;
-    width: 100%;
+    justify-content: center;
     .shopping-cart-items{
       width: 50%;
       background-color: white;
@@ -104,12 +103,13 @@
   .empty-cart-message {
     text-align: center;
     font-size: $font-md-size;
+    font-size: 2em;
     button {
       background-color: #000;
       color: $tertiary-color;
       @include button-border(false);
       margin-top: 20px;
-      font-size: 1em;
+      font-size: 0.5em;
       &:hover {
         background-color: $secondary-color;
       }

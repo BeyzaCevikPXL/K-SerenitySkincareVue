@@ -15,7 +15,9 @@ export default {
             totalproducts: "Totaal producten:",
             btw: "Btw 21%:",
             total: "Totaal:",
-            button: "BESTELLEN:"
+            button: "BESTELLEN",
+            empty: "Je winkelwagen is leeg",
+            gobackbutton: "Ga terug"
 
         }
     },
@@ -54,6 +56,9 @@ export default {
         },
         goBack() {
             this.$router.go(-1);
+        },
+        goToCheckout() {
+            this.$router.push('/checkout');
         }
     }
 }
@@ -99,12 +104,12 @@ export default {
                     <div class="summary-label"><b>{{ total }}</b></div>
                     <div class="summary-value"><b>€ {{ calculateTotal().toFixed(2) }}</b></div>
                 </div>
-                <button class="checkout-button">{{ button }}</button>
+                <button @click="goToCheckout" class="checkout-button">{{ button }}</button>
             </div>
         </div>
         <div class="empty-cart-message" v-if="cartItems.length === 0">
-            <p>Je winkelwagen is leeg</p>
-            <button @click="goBack" class="go-back-button">Ga terug</button>
+            <p>{{ empty }}</p>
+            <button @click="goBack" class="go-back-button">{{ gobackbutton }}</button>
         </div>
     </div>
     <FooterComponent></FooterComponent>
