@@ -16,6 +16,13 @@ export default {
       itemsPerPage: 8,
       selectedBrandFilter: '',
       selectedPriceFilter: '',
+      filtermerk: "Alle merken",
+      filteroptie1: "0 - 10",
+      filteroptie2: "10 - 20",
+      filteroptie3: "20 - 30",
+      filteroptie4: "30 - 40",
+      filteroptie5: "40 - 50",
+      filterprijs: "Alle prijzen"
     }
   },
   components: {
@@ -109,18 +116,18 @@ export default {
       <div class="filter-col">
         <label for="merk-filter">{{ filtertitle }}</label>
         <select id="merk-filter" class="prijs-filter" @change="handleBrandFilterChange($event.target.value)">
-          <option value="">Alle merken</option>
+          <option value="">{{ filtermerk }}</option>
           <option v-for="brand in uniqueBrands" :key="brand" :value="brand">{{ brand }}</option>
         </select>
         <!--moet js nog doen-->
         <label for="prijs-filter" class="prijs-filter-groot">{{ filtertitletwo }}</label>
         <select id="prijs-filter" class="prijs-filter" @change="handlePriceFilterChange($event.target.value)">
-          <option value="all">Alle prijzen</option>
-          <option value="0-10">0 - 10</option>
-          <option value="10-20">10 - 20</option>
-          <option value="20-30">20 - 30</option>
-          <option value="30-40">30 - 40</option>
-          <option value="40-50">40 - 50</option>
+          <option value="all">{{ filterprijs }}</option>
+          <option value="0-10">{{filteroptie1}}</option>
+          <option value="10-20">{{filteroptie2}}</option>
+          <option value="20-30">{{filteroptie3}}</option>
+          <option value="30-40">{{filteroptie4}}</option>
+          <option value="40-50">{{filteroptie5}}</option>
         </select>
       </div>
     </div>

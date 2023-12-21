@@ -20,12 +20,20 @@
   @include flex-center;
   padding: 20px;
   font-family: $font-mulish;
-  .prijs-filter-groot{
+
+  .prijs-filter-groot {
     margin-left: 50px;
 
   }
+
   .prijs-filter {
     margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid $secondary-color;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
   }
 }
 
@@ -47,6 +55,7 @@
       width: calc(25% - 20px);
       margin: 10px 0;
       text-align: center;
+
       h2 {
         font-size: $font-sm-size;
         margin-bottom: 10px;

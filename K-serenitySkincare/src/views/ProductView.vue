@@ -103,11 +103,12 @@ export default {
           <div class="description">{{ product.description }}</div>
           <div class="price">{{ munt + product.price }}</div>
           <div class="quantity">
-            <button @click="decreaseQuantity">-</button>
-            <input type="number" v-model="selectedQuantity" min="1" :max="maxAvailableQuantity">
-            <button @click="increaseQuantity">+</button>
+            <button @click="decreaseQuantity" :disabled="isSoldOut">-</button>
+            <input type="number" v-model="selectedQuantity" min="1" :max="maxAvailableQuantity" :disabled="isSoldOut">
+            <button @click="increaseQuantity" :disabled="isSoldOut">+</button>
           </div>
-          <button @click="addToCart" class="add-to-cart">{{ winkelwagenbutton }}</button>
+          <button @click="addToCart" class="add-to-cart" :disabled="isSoldOut"> {{ isSoldOut ? 'UITVERKOCHT' : winkelwagenbutton }}
+</button>
         </div>
       </div>
 
