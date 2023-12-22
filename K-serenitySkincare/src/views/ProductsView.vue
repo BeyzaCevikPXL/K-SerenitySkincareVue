@@ -17,11 +17,11 @@ export default {
       selectedBrandFilter: '',
       selectedPriceFilter: '',
       filtermerk: "Alle merken",
-      filteroptie1: "0 - 10",
-      filteroptie2: "10 - 20",
-      filteroptie3: "20 - 30",
-      filteroptie4: "30 - 40",
-      filteroptie5: "40 - 50",
+      filteroptie1: "€0 -  €10",
+      filteroptie2: "€10 - €20",
+      filteroptie3: "€20 - €30",
+      filteroptie4: "€30 - €40",
+      filteroptie5: "€40 - €50",
       filterprijs: "Alle prijzen"
     }
   },
